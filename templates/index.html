@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+
+
+    <title>Join PDF</title>
+</head>
+
+<body>
+
+
+    <div class="app-container">
+        <div class="app-center bg-slate-800">
+            <p>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+
+                {% for message in messages %}
+                <div class="form-group">
+                    <div style="margin-right: 10px; margin-left: 10px;" class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+            </p>
+            <span class="major-text tracking-normal font-semibold">JOIN PDF</span>
+
+            <div>
+                <form enctype="multipart/form-data" action="/join" method="POST">
+                    <label class="text font-semibold margin-text"for="exampleInputEmail1">Selecione os arquivos...</label>
+                    <input type="file" class="margin-text block w-full text-sm text-slate-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-green-50 file:text-green-500
+                    hover:file:bg-green-100" multiple>
+                    <small id="tabelaHelp" class="form-text minor-text ">Se deseja uma ordem, renomeie os arquivos com um numero na
+                        frente.</small>
+                        <div class=" space-x-4">
+                            <button type="submit" class="buttons inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">Enviar</button>
+                          </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

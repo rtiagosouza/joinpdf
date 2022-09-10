@@ -1,0 +1,44 @@
+.app-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.app-center {
+    flex-direction: column ;
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.major-text{
+    font-size: 39px;
+    color:whitesmoke;
+    padding-top: 10px;
+    padding-bottom:40px;
+}
+.text{
+    
+    font-size: 20px;
+    color:whitesmoke;
+
+}
+.minor-text{
+    
+    color:whitesmoke;
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.margin-text{
+    margin-top: 20px;
+}
+
+

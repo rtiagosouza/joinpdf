@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-group row">
+        <label for="detected_pitch" class="col-sm-2 col-form-label">Pitch from dataset: </label>
+        <div class="col-sm-10" style="padding-top: 8px">
+            {%for i in range(0, len)%}
+            <p>{{nome[i]}}</p>
+            {%endfor%}
+        </div>
+        <button id="myButton" class="btn btn-primary" style="margin: 20px;" onclick="redirect()">Voltar</button>
+        <a href={{url_for('download', name='resultado.pdf')}} class="btn btn-primary" style="margin: 20px;">Download</a>
+    </div>
+    
+</body>
+
+</html>
+
+<script type="text/javascript">
+    function redirect() {
+        window.location.href = "http://LTG3NKT73:8080/";
+    };
+</script>
